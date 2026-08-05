@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://kedirievent.com/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/logo3.png</image:loc>
+      <image:title>Kediri Event - Platform Event Terlengkap di Kediri</image:title>
+    </image:image>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://kedirievent.com/about.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Syarat & Ketentuan -->
+  <url>
+    <loc>https://kedirievent.com/syarat.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Events Catalog -->
+  <url>
+    <loc>https://kedirievent.com/events.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/konsermegah.webp</image:loc>
+      <image:title>Katalog Event Kediri Terlengkap</image:title>
+    </image:image>
+  </url>
+
+  <!-- Partnership -->
+  <url>
+    <loc>https://kedirievent.com/partnership.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://kedirievent.com/blog.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://kedirievent.com/contact.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Event Detail Pages -->
+  <url>
+    <loc>https://kedirievent.com/seminar-pelatihan.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/pelatihan1_3_11zon.webp</image:loc>
+      <image:title>Seminar &amp; Pelatihan Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/event-terdekat.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/event-terdekat1_8_11zon.webp</image:loc>
+      <image:title>Event Terdekat Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/sport-event.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/sport1_6_11zon.webp</image:loc>
+      <image:title>Sport Event Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/school-competition.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/school3_9_11zon.webp</image:loc>
+      <image:title>School Competition Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/akustik.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/konsermegah.webp</image:loc>
+      <image:title>Konser Akustik Senja Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/outbound.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/outboundtariktambang.webp</image:loc>
+      <image:title>Outbound Team Building Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/duriankuliner.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/waruturirun.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/waruturifunrun.webp</image:loc>
+      <image:title>Waru Turi Fun Run Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/waruturirun-registrasi.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/waruturifunrun.webp</image:loc>
+      <image:title>Pendaftaran Waru Turi Fun Run 2026 Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-festival-kuno-kini-2026.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/konsermegah.webp</image:loc>
+      <image:title>Festival Kuno-Kini 2026 Kediri</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Article Pages -->
+  <url>
+    <loc>https://kedirievent.com/persiapan-wajib-nonton-persik-kediri.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/esport.webp</image:loc>
+      <image:title>Persiapan Nonton Persik Kediri di Stadion Brawijaya</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/7-spot-kuliner-malam-terdekat-simpang-lima-gumul.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/kulinermalam.webp</image:loc>
+      <image:title>Kuliner Malam Dekat Simpang Lima Gumul Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/sejarah-gelar-tari-jaranan-kediri.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/manasikhaji.webp</image:loc>
+      <image:title>Sejarah Tari Jaranan Kediri</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/5-cafe-estetik-di-kediri.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/cara-menuju-lokasi-event-transportasiumum.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/festival-kuno-kini-2026-kediri.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://kedirievent.com/assets/img/konsermegah.webp</image:loc>
+      <image:title>Artikel Festival Kuno-Kini 2026 Kediri</image:title>
+    </image:image>
+  </url>
+
+  <!-- Event Selected Detailed Pages -->
+  <url>
+    <loc>https://kedirievent.com/detail-pelatihan-digital.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-forum-literasi.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-content-creator.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-school-contest.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-freefire-battle.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-mobile-legends.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-fun-walk-nganjuk.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-lomba-poster.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-sekolah-inflasi.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/detail-school-contest-2024.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/program-scholarship-camp-global-english.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kedirievent.com/program-holiday-global-english.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

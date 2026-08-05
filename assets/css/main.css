@@ -1,0 +1,3795 @@
+/**
+* Template Name: Techie
+* Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Roboto",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #2c4964; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #5846f9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+  --nav-color: rgba(255, 255, 255, 0.8);  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #5846f9; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+
+.light-background {
+  --background-color: #f9f8ff;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #202020;
+  --contrast-color: #ffffff;
+}
+
+.accent-background {
+  --background-color: #5846f9;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #ffffff;
+  --surface-color: #7c25ba;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  --background-color: rgba(0, 0, 0, 0);
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  font-size: 14px;
+  padding: 7px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 4px;
+  transition: 0.3s;
+  border: 2px solid color-mix(in srgb, var(--contrast-color), transparent 50%);
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  border-color: var(--contrast-color);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Header on Scroll
+------------------------------*/
+.scrolled .header {
+  --background-color: rgba(77, 44, 169, 0.9);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu>ul>li {
+    white-space: nowrap;
+    padding: 15px 14px;
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    font-size: 15px;
+    padding: 0 2px;
+    font-family: var(--nav-font);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu>ul>li>a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--nav-hover-color);
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navmenu a:hover:before,
+  .navmenu li:hover>a:before,
+  .navmenu .active:before {
+    visibility: visible;
+    width: 100%;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: var(--nav-dropdown-background-color);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/footer-bg.jpg") center center no-repeat;
+  background-size: cover;
+  font-size: 14px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  color: var(--heading-color);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 2px;
+  font-size: 12px;
+  line-height: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+}
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+# Responsif Footer untuk Layar Mobile (HP & Tablet)
+--------------------------------------------------------------*/
+
+/* Penyesuaian untuk layar Tablet dan HP (Maksimal 991px) */
+@media (max-width: 991px) {
+  .footer .footer-about, 
+  .footer .footer-contact, 
+  .footer .footer-links {
+    margin-bottom: 40px; /* Memberikan jarak pernapasan antar kolom yang menumpuk ke bawah */
+  }
+}
+
+/* Penyesuaian spesifik untuk layar HP (Maksimal 768px) */
+@media (max-width: 768px) {
+  .footer .footer-top {
+    padding-top: 30px; /* Mengurangi ruang kosong berlebih di bagian atas footer */
+  }
+
+  .footer .footer-about .logo span {
+    font-size: 24px; /* Mengecilkan sedikit ukuran font nama website agar tidak terlalu memakan tempat */
+  }
+
+  /* Membuat area copyright dan credit di paling bawah menjadi rata tengah (Center) */
+  .footer .copyright, 
+  .footer .credits {
+    text-align: center; 
+  }
+  
+  .footer .copyright {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+/* Penyesuaian Ekstra untuk Layar HP Portrait (Maksimal 575px) */
+@media (max-width: 575px) {
+  /* Opsional: Membuat seluruh konten footer menjadi rata tengah agar lebih estetik di layar sempit */
+  .footer .footer-about,
+  .footer .footer-links,
+  .footer .footer-contact {
+    text-align: center;
+  }
+
+  /* Menengahkan susunan logo dan teks */
+  .footer .footer-about .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Menengahkan deretan ikon sosial media */
+  .footer .social-links {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  /* Menengahkan daftar menu/link */
+  .footer .footer-links ul li {
+    justify-content: center; 
+  }
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/page-title-bg.jpg") top center no-repeat;
+  background-size: cover;
+  padding: 160px 0 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: 10px;
+  margin-top: 20px;
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: 10px;
+  margin-top: 30px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 92px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+
+  section,
+  .section {
+    scroll-margin-top: 77px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 120px 0 60px 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(45deg, var(--background-color) 0%, color-mix(in srgb, var(--surface-color), transparent 10%) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background-size: cover;
+  /* Menggabungkan gradient transparan dengan gambar background */
+  background: linear-gradient(
+    rgba(124, 37, 186, 0.70), /* Ungu Kediri Event dengan opasitas 85% di atas */
+    rgba(124, 37, 186, 0.70)  /* Ungu Kediri Event dengan opasitas 95% di bawah */
+  ), url('../img/landscape.webp') !important; /* Sesuaikan nama/path gambar Anda */
+  
+  background-size: cover !important; /* Memastikan gambar menutupi seluruh area */
+  background-position: center center !important; /* Memposisikan gambar di tengah */
+  background-repeat: no-repeat !important;
+}
+
+/* Opsional: Efek Parallax (Background diam saat discroll) - Hapus jika tidak suka */
+@media (min-width: 992px) {
+  #hero {
+    background-attachment: fixed !important; 
+  }
+}
+
+
+.hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+.hero p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin: 5px 0 30px 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.hero .btn-get-started {
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 36px;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: 2px solid var(--contrast-color);
+}
+
+.hero .btn-get-started:hover {
+  color: var(--accent-color);
+  background: var(--contrast-color);
+}
+
+.hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: var(--default-color);
+  font-weight: 600;
+}
+
+.hero .btn-watch-video i {
+  color: var(--accent-color);
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+.hero .btn-watch-video:hover {
+  color: var(--accent-color);
+}
+
+.hero .btn-watch-video:hover i {
+  color: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  .hero .btn-get-started,
+  .hero .btn-watch-video {
+    font-size: 13px;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-bottom: 10px;
+}
+
+.about .content ul i {
+  font-size: 1.25rem;
+  margin-right: 4px;
+  color: var(--accent-color);
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content .read-more {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 12px 24px;
+  border-radius: 5px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .content .read-more i {
+  font-size: 18px;
+  margin-left: 5px;
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.about .content .read-more:hover {
+  background: color-mix(in srgb, var(--accent-color), black 20%);
+  padding-right: 19px;
+}
+
+.about .content .read-more:hover i {
+  margin-left: 10px;
+}
+
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats {
+  position: relative;
+  padding: 80px 0;
+  background: url("../img/stats-bg.png") center center no-repeat;
+  background-size: cover;
+}
+
+.stats:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 80%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.stats .container {
+  position: relative;
+  z-index: 3;
+}
+
+.stats .stats-item {
+  padding: 30px;
+  width: 100%;
+}
+
+.stats .stats-item span {
+  font-size: 48px;
+  display: block;
+  color: var(--default-color);
+  font-weight: 700;
+}
+
+.stats .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .service-item {
+  position: relative;
+  padding-top: 20px;
+}
+
+.services .service-item .icon {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  width: 72px;
+  height: 72px;
+  position: relative;
+  margin-right: 15px;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+}
+
+.services .service-item .icon i {
+  color: var(--accent-color);
+  font-size: 32px;
+  z-index: 2;
+  position: relative;
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .title a:hover {
+  color: var(--accent-color);
+}
+
+.services .service-item .description {
+  font-size: 14px;
+}
+
+.services .service-item:hover .icon {
+  background-color: var(--accent-color);
+}
+
+.services .service-item:hover .icon i {
+  color: var(--contrast-color);
+}
+
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+.features .features-image {
+  position: relative;
+  min-height: 400px;
+}
+
+.features .features-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.features .features-item i {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-right: 20px;
+  line-height: 0;
+}
+
+.features .features-item p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonials-slider {
+  width: 100%;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.testimonials .swiper-wrapper {
+  height: auto;
+}
+
+.testimonials .testimonial-item {
+  background-color: var(--surface-color);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+@media (max-width: 575px) {
+  .testimonials .testimonial-item {
+    padding: 20px;
+  }
+}
+
+.testimonials .testimonial-item h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.testimonials .testimonial-item p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.testimonials .testimonial-item .profile {
+  gap: 15px;
+}
+
+.testimonials .testimonial-item .profile .profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonials .testimonial-item .profile .profile-info h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.testimonials .testimonial-item .profile .profile-info span {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color) 70%, transparent);
+}
+
+.testimonials .testimonial-item .featured-img-wrapper {
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.testimonials .testimonial-item .featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.testimonials .swiper-navigation {
+  position: absolute;
+  bottom: 0;
+  gap: 10px;
+}
+
+.testimonials .swiper-button-prev,
+.testimonials .swiper-button-next {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  background-color: var(--surface-color);
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
+  transition: 0.3s;
+}
+
+.testimonials .swiper-button-prev::after,
+.testimonials .swiper-button-next::after {
+  font-size: 20px;
+  color: var(--default-color);
+}
+
+.testimonials .swiper-button-prev:hover,
+.testimonials .swiper-button-next:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.testimonials .swiper-button-prev:hover::after,
+.testimonials .swiper-button-next:hover::after {
+  color: var(--contrast-color);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0 0 20px 0;
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 10px;
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+}
+
+.portfolio .portfolio-content {
+  background-color: var(--surface-color);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-content img {
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio .portfolio-content .portfolio-info {
+  background-color: var(--background-color);
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 25px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 a {
+  color: var(--heading-color);
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 a:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing .pricing-item {
+  background-color: var(--surface-color);
+  box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--background-color);
+  padding: 60px 40px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.pricing h3 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.pricing h4 {
+  color: var(--accent-color);
+  font-size: 48px;
+  font-weight: 400;
+  font-family: var(--heading-font);
+  margin-bottom: 0;
+}
+
+.pricing h4 sup {
+  font-size: 28px;
+}
+
+.pricing h4 span {
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 18px;
+}
+
+.pricing ul {
+  padding: 20px 0;
+  list-style: none;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  text-align: left;
+  line-height: 20px;
+}
+
+.pricing ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.pricing ul i {
+  color: #059652;
+  font-size: 24px;
+  padding-right: 3px;
+}
+
+.pricing ul .na {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+.pricing ul .na i {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+.pricing ul .na span {
+  text-decoration: line-through;
+}
+
+.pricing .buy-btn {
+  color: var(--accent-color);
+  display: inline-block;
+  padding: 8px 35px 10px 35px;
+  border-radius: 50px;
+  transition: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--heading-font);
+  transition: 0.3s;
+  border: 1px solid var(--accent-color);
+}
+
+.pricing .buy-btn:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .featured {
+  border-top-color: var(--accent-color);
+}
+
+.pricing .featured .buy-btn {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+@media (max-width: 992px) {
+  .pricing .box {
+    max-width: 60%;
+    margin: 0 auto 30px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing .box {
+    max-width: 80%;
+    margin: 0 auto 30px auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .pricing .box {
+    max-width: 100%;
+    margin: 0 auto 30px auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .faq-container .faq-item {
+  background-color: var(--surface-color);
+  position: relative;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-container .faq-item h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 30px 0 0;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.faq .faq-container .faq-item h3 .num {
+  color: var(--accent-color);
+  padding-right: 5px;
+}
+
+.faq .faq-container .faq-item h3:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-container .faq-item .faq-content p {
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.faq .faq-container .faq-item .faq-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  line-height: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.faq .faq-container .faq-item .faq-toggle:hover {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.faq .faq-container .faq-active h3 {
+  color: var(--accent-color);
+}
+
+.faq .faq-container .faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+  transform: rotate(90deg);
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team .team-member {
+  background-color: var(--surface-color);
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.team .team-member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .team-member .member-img:after {
+  position: absolute;
+  content: "";
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  height: 100%;
+  background-color: var(--surface-color);
+  -webkit-mask: url("../img/team-shape.svg") no-repeat center bottom;
+  mask: url("../img/team-shape.svg") no-repeat center bottom;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  z-index: 1;
+}
+
+.team .team-member .social {
+  position: absolute;
+  right: -100%;
+  top: 30px;
+  opacity: 0;
+  border-radius: 4px;
+  transition: 0.5s;
+  background: color-mix(in srgb, var(--background-color), transparent 60%);
+  z-index: 2;
+}
+
+.team .team-member .social a {
+  transition: color 0.3s;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  margin: 15px 12px;
+  display: block;
+  line-height: 0;
+  text-align: center;
+}
+
+.team .team-member .social a:hover {
+  color: var(--default-color);
+}
+
+.team .team-member .social i {
+  font-size: 18px;
+}
+
+.team .team-member .member-info {
+  padding: 10px 15px 20px 15px;
+}
+
+.team .team-member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.team .team-member .member-info span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.team .team-member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  padding-top: 15px;
+  line-height: 26px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.team .team-member:hover {
+  transform: scale(1.08);
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.team .team-member:hover .social {
+  right: 8px;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 30px;
+}
+
+.contact .info-item i {
+  font-size: 38px;
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .info-item p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form {
+  background: color-mix(in srgb, var(--default-color), transparent 96%);
+  padding: 30px;
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .swiper-wrapper {
+  height: auto;
+}
+
+.portfolio-details .swiper-button-prev,
+.portfolio-details .swiper-button-next {
+  width: 48px;
+  height: 48px;
+}
+
+.portfolio-details .swiper-button-prev:after,
+.portfolio-details .swiper-button-next:after {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 24px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.portfolio-details .swiper-button-prev:hover:after,
+.portfolio-details .swiper-button-next:hover:after {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575px) {
+
+  .portfolio-details .swiper-button-prev,
+  .portfolio-details .swiper-button-next {
+    display: none;
+  }
+}
+
+.portfolio-details .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-info h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  bottom: 0;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.portfolio-details .portfolio-info ul strong {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  font-size: 14px;
+}
+
+.portfolio-details .portfolio-info .btn-visit {
+  padding: 8px 40px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-info .btn-visit:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item {
+  padding: 30px 30px 0 30px;
+  position: relative;
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  margin-bottom: 50px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50px;
+  border: 6px solid var(--background-color);
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  padding-top: 20px;
+}
+
+.portfolio-details .portfolio-description .testimonial-item h4 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left,
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-description .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.portfolio-details .portfolio-description .testimonial-item p {
+  font-style: italic;
+  margin: 0 0 15px 0 0 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.service-details .services-list {
+  background-color: var(--surface-color);
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
+}
+
+.service-details .services-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
+}
+
+.service-details .services-list a.active {
+  color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
+}
+
+.service-details .services-list a:hover {
+  border-color: var(--accent-color);
+}
+
+.service-details .services-img {
+  margin-bottom: 20px;
+}
+
+.service-details h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.service-details h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.service-details p {
+  font-size: 15px;
+}
+
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.service-details ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.service-details ul i {
+  font-size: 20px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+
+/* =========================
+   CLIENTS / SPONSOR SLIDER
+   Auto-length (no fixed px)
+   ========================= */
+
+.clients {
+  overflow-x: hidden;
+  padding: 40px 0;
+}
+
+.clients .clients-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.clients .clients-slider:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* Track: jangan pakai width fixed / px. Biarkan panjang mengikuti konten */
+.clients .clients-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation-duration: 80s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.clients .clients-track.track-1 {
+  animation-name: scroll-left;
+}
+
+.clients .clients-track.track-2 {
+  animation-name: scroll-right;
+}
+
+/* Pause on hover */
+.clients .clients-track:hover {
+  animation-play-state: paused;
+}
+
+/* Slide card */
+.clients .clients-slide {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 100px;
+  margin: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.clients .clients-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--default-color), transparent 96%),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.clients .clients-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.clients .clients-slide:hover::before {
+  left: 100%;
+}
+
+.clients .clients-slide img {
+  max-width: 80%;
+  max-height: 60%;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.clients .clients-slide:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+/* =========================
+   KEYFRAMES (AUTO)
+   - Asumsinya track berisi 2 copy yang sama:
+     [copy1][copy2]
+   - Jadi geser 50% dari total track
+   ========================= */
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 991px) {
+  .clients .clients-slide {
+    width: 180px;
+    height: 90px;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .clients .clients-slide {
+    width: 150px;
+    height: 75px;
+    margin: 0 15px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Smart Search & Filter Section
+--------------------------------------------------------------*/
+.search-filter {
+  /* Mengangkat box filter ke atas agar tumpang tindih dengan hero section */
+  margin-top: -60px; 
+  position: relative;
+  z-index: 10;
+  padding-bottom: 60px;
+}
+
+.search-filter .filter-wrapper {
+  /* Bayangan lembut dengan sentuhan warna ungu agar menyatu dengan tema */
+  box-shadow: 0 15px 35px rgba(75, 0, 130, 0.1) !important;
+}
+
+.search-filter .form-label {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.search-filter .form-select,
+.search-filter .form-control {
+  height: 52px; /* Ukuran yang ideal untuk disentuh jari di layar mobile */
+  border-radius: 8px;
+  font-size: 15px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Efek saat input di-klik/fokus */
+.search-filter .form-select:focus,
+.search-filter .form-control:focus {
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 80%);
+  background-color: #fff !important;
+  border: 1px solid var(--accent-color) !important;
+}
+
+.search-filter .btn-search {
+  height: 52px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.search-filter .btn-search:hover {
+  background-color: var(--surface-color); /* Warna ungu Persik */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(75, 0, 130, 0.3);
+  color: var(--contrast-color);
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 991px) {
+  .search-filter {
+    margin-top: 0; /* Reset margin negatif di mobile agar tidak menutupi gambar hero */
+    padding-top: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Event List & Event Cards
+--------------------------------------------------------------*/
+.events-list {
+  padding-top: 20px;
+  padding-bottom: 80px;
+  background-color: #f9f9fa; /* Latar belakang abu-abu sangat terang agar card putih menonjol */
+}
+
+.event-card {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Efek Hover: Card terangkat dan gambar sedikit membesar (Zoom) */
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(75, 0, 130, 0.15) !important; /* Shadow ungu transparan */
+}
+
+.event-card .event-img img {
+  transition: transform 0.5s ease;
+  aspect-ratio: 4/3; /* Memastikan semua gambar seragam tingginya */
+  object-fit: cover;
+}
+
+.event-card:hover .event-img img {
+  transform: scale(1.08);
+}
+
+/* Badge Tanggal */
+.event-date-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 8px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Kategori Tag */
+.category-tag {
+  color: var(--surface-color) !important;
+  background-color: color-mix(in srgb, var(--surface-color), transparent 85%) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.event-title a {
+  transition: color 0.3s ease;
+  font-size: 22px;
+}
+
+.event-title a:hover {
+  color: var(--surface-color) !important;
+}
+
+/* Ikon Meta Data */
+.text-accent {
+  color: var(--accent-color);
+}
+
+/* Tombol Detail */
+.btn-outline-accent {
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  background: transparent;
+  transition: 0.3s;
+}
+
+.btn-outline-accent:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 768px) {
+  .event-title a {
+    font-size: 20px; /* Sedikit dikecilkan di mobile agar tidak memakan banyak baris */
+  }
+  
+  .event-card .event-content {
+    padding: 20px !important; /* Padding dikurangi di mobile agar konten lebih padat */
+  }
+}
+
+/*--------------------------------------------------------------
+# Featured Events Section
+--------------------------------------------------------------*/
+.featured-events {
+  background-color: #ffffff;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.featured-card {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column; /* Memastikan konten mengisi tinggi kartu */
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(75, 0, 130, 0.15) !important; /* Efek shadow ungu */
+}
+
+/* Image Wrapper & Thumbnail */
+.featured-img-wrap {
+  width: 100%;
+  aspect-ratio: 16/9; /* Rasio gambar melebar khas event banner */
+  overflow: hidden;
+}
+
+.featured-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.featured-card:hover .featured-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* Badge Status Styling */
+.badge-status {
+  top: 15px;
+  left: 15px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Content Area */
+.featured-content {
+  flex-grow: 1; /* Mendorong tombol ke bagian paling bawah */
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-content .title a {
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+
+.featured-content .title a:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Utility / Icons */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.btn-outline-accent {
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  background: transparent;
+  transition: 0.3s;
+}
+
+.btn-outline-accent:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Hover effect on 'Lihat Semua' button */
+.featured-events .btn-accent:hover {
+  background-color: var(--surface-color) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(75, 0, 130, 0.3);
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 768px) {
+  .featured-content {
+    padding: 20px !important;
+  }
+  .featured-content .title a {
+    font-size: 18px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Value Proposition / Trust Signals Section
+--------------------------------------------------------------*/
+.trust-signals {
+  /* Menggunakan warna ungu utama secara eksplisit agar dominan */
+  background-color: var(--accent-color); 
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Mengubah warna teks section title khusus di bagian ini */
+.trust-signals .section-title h2 {
+  color: var(--contrast-color);
+}
+
+.trust-signals .section-title p {
+  color: color-mix(in srgb, var(--contrast-color), transparent 20%);
+}
+
+.trust-signals .section-title h2::after {
+  background: var(--contrast-color); /* Garis bawah judul menjadi putih */
+}
+
+/* Styling untuk setiap poin keunggulan */
+.trust-item {
+  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+/* Efek hover lembut agar interaktif */
+.trust-item:hover {
+  background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
+  transform: translateX(10px);
+}
+
+/* Styling Ikon Minimalis */
+.trust-item .icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: var(--contrast-color); /* Latar ikon putih */
+  color: var(--accent-color); /* Ikon berwarna ungu */
+  border-radius: 50%; /* Membuatnya bulat */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-size: 28px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.trust-item:hover .icon-box {
+  transform: scale(1.1);
+}
+
+/* Teks dan Paragraf */
+.trust-item h4 {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.trust-item p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Animasi gambar melayang (opsional agar tidak kaku) */
+.floating-img {
+  animation: float-img 3s ease-in-out infinite;
+}
+
+@keyframes float-img {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 991px) {
+  .trust-signals {
+    padding: 60px 0;
+  }
+  
+  .trust-item {
+    padding: 10px 0; /* Menghilangkan padding kiri-kanan di layar kecil */
+  }
+  
+  .trust-item:hover {
+    transform: none; /* Matikan efek geser di mobile agar tidak mengganggu scroll */
+    background-color: transparent;
+  }
+
+  .floating-img {
+    margin-bottom: 40px;
+    max-width: 80%; /* Gambar tidak terlalu besar di HP */
+  }
+}
+
+/*--------------------------------------------------------------
+# Artikel Tips & Destinasi (Blog SEO Magnet)
+--------------------------------------------------------------*/
+.blog-seo {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.blog-card {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(75, 0, 130, 0.12) !important; /* Efek shadow ungu transparan saat di-hover */
+}
+
+/* Image Wrapper */
+.blog-img {
+  aspect-ratio: 16/10; /* Rasio standar thumbnail artikel blog */
+  overflow: hidden;
+}
+
+.blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img img {
+  transform: scale(1.08); /* Efek zoom in pada gambar */
+}
+
+/* Category Badge (Floating) */
+.blog-category {
+  top: 15px;
+  left: 15px;
+  background-color: var(--accent-color) !important; /* Memastikan background berwarna ungu */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+/* Typography & Links */
+.blog-title a {
+  transition: color 0.3s ease;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.blog-title a:hover {
+  color: var(--accent-color) !important;
+}
+
+.blog-card p {
+  line-height: 1.6;
+}
+
+.read-more-btn {
+  color: var(--accent-color);
+  transition: 0.3s;
+}
+
+.read-more-btn:hover {
+  color: var(--surface-color); /* Warna ungu sekunder saat hover */
+  letter-spacing: 0.5px;
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 768px) {
+  .blog-title a {
+    font-size: 18px;
+  }
+  .blog-content {
+    padding: 20px !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Modern About Section (Kediri Theme)
+--------------------------------------------------------------*/
+.about-modern {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Typography & Colors */
+.text-accent {
+  color: var(--accent-color);
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.badge-custom {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Modern Grid Icons */
+.icon-box-modern {
+  width: 50px;
+  height: 50px;
+  background-color: var(--contrast-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.icon-box-modern:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+}
+
+/* Modern Buttons */
+.btn-accent-modern {
+  background: linear-gradient(45deg, var(--surface-color), var(--accent-color));
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-accent-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(75, 0, 130, 0.3) !important;
+}
+
+/* Play Button with Pulse Animation */
+.play-icon-modern {
+  width: 45px;
+  height: 45px;
+  background-color: var(--contrast-color);
+  color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-watch-modern:hover .play-icon-modern {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.play-icon-modern::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+  animation: pulse-ring 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Image Composition (The "Wow" Factor) */
+.about-images {
+  padding: 20px 20px 20px 0; /* Memberi ruang untuk gambar yang keluar jalur */
+}
+
+/* Shape dekoratif di belakang gambar */
+.shape-blob {
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--surface-color), transparent 80%), color-mix(in srgb, var(--accent-color), transparent 80%));
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Bentuk tidak beraturan / organik */
+  top: -20px;
+  right: -20px;
+  z-index: 0;
+}
+
+/* Gambar overlapping di pojok kiri bawah */
+.sub-image {
+  width: 55%;
+  bottom: -30px;
+  left: -30px;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-images:hover .sub-image {
+  transform: scale(1.05) translate(10px, -10px);
+}
+
+/* Floating Stats Badge */
+.floating-stat {
+  top: 40px;
+  right: -40px;
+  animation: float-stat 4s ease-in-out infinite;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes float-stat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Penyesuaian Responsif untuk Tablet & Mobile */
+@media (max-width: 991px) {
+  .about-images {
+    margin-top: 40px;
+    padding: 0;
+  }
+  .sub-image {
+    left: 10px;
+    bottom: -20px;
+    width: 60%;
+  }
+  .floating-stat {
+    right: 10px;
+    top: 20px;
+  }
+  .shape-blob {
+    display: none; /* Disembunyikan di HP agar tidak berat/overflow */
+  }
+}
+
+@media (max-width: 576px) {
+  .sub-image, .floating-stat {
+    position: relative; /* Matikan posisi absolut di layar sangat kecil */
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: 20px;
+    animation: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# Halaman Eksplorasi Event (/events)
+--------------------------------------------------------------*/
+/* Hilangkan outline biru bawaan browser saat input di-klik */
+.focus-none:focus {
+  box-shadow: none !important;
+  border-color: #7c25ba !important;
+}
+
+/* Custom Checkbox/Radio Warna Ungu (#7c25ba) */
+.custom-check .form-check-input:checked {
+  background-color: #7c25ba;
+  border-color: #7c25ba;
+}
+
+.custom-select:focus, .custom-date:focus {
+  border-color: #7c25ba;
+}
+
+/* --- EFEK HOVER CARD EVENT YANG "WAH" --- */
+.event-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  top: 0;
+  position: relative;
+}
+
+/* Saat card di-hover, beri efek terangkat dan bayangan ungu yang menyebar */
+.event-card:hover {
+  top: -10px;
+  box-shadow: 0 20px 40px rgba(124, 37, 186, 0.2) !important;
+}
+
+.event-card img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.event-card:hover img {
+  transform: scale(1.1); /* Zoom in gambar sedikit lebih besar */
+}
+
+/* Warna judul berubah saat card di-hover */
+.event-card-title {
+  transition: color 0.3s ease;
+}
+.event-card:hover .event-card-title {
+  color: #7c25ba;
+}
+
+/* --- STYLING BUTTON MUAT LEBIH BANYAK --- */
+.btn-outline-custom {
+  color: #7c25ba;
+  border: 2px solid #7c25ba;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: #7c25ba;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 37, 186, 0.3);
+}
+
+/* Animasi Spin untuk Loading */
+.spin-anim {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Penyesuaian Mobile: Filter ditarik ke atas agar tidak memakan ruang */
+@media (max-width: 991px) {
+  .sidebar-filter {
+    position: static !important;
+    margin-bottom: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Ad Banners Slider Section
+--------------------------------------------------------------*/
+.ad-banners .swiper {
+  width: 100%;
+  /* Memaksa area slider menjadi lanskap memanjang (Rasio 21:9 khas banner web) */
+  aspect-ratio: 21 / 9; 
+  background-color: #f8f9fa; /* Latar abu-abu terang jika gambar telat dimuat */
+  margin-bottom: 70px;
+}
+
+.ad-banners .ad-image {
+  width: 100%;
+  height: 100%;
+  /* Object-fit cover memastikan gambar mengisi penuh area tanpa menjadi gepeng */
+  object-fit: cover; 
+  display: block;
+}
+
+/* Mengubah warna titik navigasi (dots) menjadi ungu Kediri Event */
+.ad-banners .swiper-pagination-bullet {
+  background-color: rgba(124, 37, 186, 0.4); /* Ungu transparan untuk dot yang tidak aktif */
+  opacity: 1;
+}
+
+.ad-banners .swiper-pagination-bullet-active {
+  background-color: #7c25ba !important; /* Ungu solid untuk dot yang aktif */
+  width: 20px; /* Membuat dot aktif sedikit memanjang/lonjong (opsional untuk UX modern) */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Penyesuaian Responsif untuk HP (Mencegah banner terlalu tipis di layar kecil) */
+@media (max-width: 768px) {
+  .ad-banners .swiper {
+    /* Mengubah rasio menjadi 16:9 di HP agar gambar iklan tetap terlihat jelas */
+    aspect-ratio: 16 / 9; 
+  }
+}
+
+/*--------------------------------------------------------------
+# Call To Action Section (Kediri Event Theme)
+--------------------------------------------------------------*/
+.call-to-action {
+  /* Gradien ungu khas Kediri Event */
+  background: linear-gradient(135deg, #7c25ba 0%, #5a1a8c 100%);
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dekorasi background opsional agar tidak terlalu polos */
+.call-to-action::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.call-to-action::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Tombol CTA WhatsApp */
+.cta-btn-wa {
+  font-family: var(--heading-font), sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #7c25ba; /* Teks berwarna ungu agar kontras */
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-btn-wa i {
+  font-size: 22px;
+  margin-right: 10px;
+  color: #25D366; /* Warna khas ikon WhatsApp */
+}
+
+.cta-btn-wa:hover {
+  background-color: #f8f9fa;
+  color: #7c25ba;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .call-to-action {
+    padding: 60px 0;
+  }
+  .call-to-action h3 {
+    font-size: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Contact Section (Kediri Event Theme)
+--------------------------------------------------------------*/
+
+/* --- Styling Info Kontak (Kolom Kiri) --- */
+.icon-box-contact {
+  width: 54px;
+  height: 54px;
+  background-color: color-mix(in srgb, #7c25ba, transparent 90%);
+  color: #7c25ba;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.4s ease;
+}
+
+/* Interaksi Hover pada List Info */
+.info-item {
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .icon-box-contact {
+  background-color: #7c25ba;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(124, 37, 186, 0.3);
+}
+
+/* Ikon Sosial Media */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  color: #555;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background-color: #7c25ba;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(124, 37, 186, 0.3);
+}
+
+/* --- Styling Form WhatsApp (Kolom Kanan) --- */
+
+/* Input Form Minimalis & Modern */
+.custom-input {
+  background-color: #f9f9fa !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  padding: 12px 15px !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease;
+}
+
+/* Mengubah outline bawaan browser menjadi ungu saat diklik/mengetik */
+.custom-input:focus {
+  background-color: #ffffff !important;
+  border-color: #7c25ba !important;
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, #7c25ba, transparent 80%) !important;
+}
+
+/* Tombol Kirim Pesan */
+.btn-send-message {
+  background-color: #7c25ba;
+  border: none;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-send-message:hover {
+  background-color: #5a1a8c; /* Warna ungu lebih gelap saat di-hover */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 37, 186, 0.3);
+}
+
+/* --- Penyesuaian Mobile --- */
+@media (max-width: 991px) {
+  /* Mengurangi padding di layar HP agar tidak terlalu memakan tempat */
+  .contact .info-wrap, 
+  .contact .col-lg-7 > div {
+    padding: 30px !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Halaman Tentang Kami (About Page)
+--------------------------------------------------------------*/
+
+/* Utility Classes untuk Warna Tema */
+.text-purple {
+  color: #7c25ba !important;
+}
+
+.bg-purple {
+  background-color: #7c25ba !important;
+  color: #ffffff;
+}
+
+/* Header Halaman (Gradient Ungu ke Putih) */
+.about-header {
+  background: linear-gradient(135deg, color-mix(in srgb, #7c25ba, transparent 95%) 0%, color-mix(in srgb, #7c25ba, transparent 80%) 100%);
+  padding: 140px 0 80px 0;
+}
+
+/* --- Efek Gambar Bertumpuk di "Cerita Kami" --- */
+.story-img-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.story-img-main {
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 4/5; 
+  object-fit: cover;
+}
+
+/* Background bayangan ungu di belakang gambar utama */
+.story-img-bg {
+  position: absolute;
+  top: 30px;
+  right: -30px;
+  width: 100%;
+  height: 100%;
+  background-color: color-mix(in srgb, #7c25ba, transparent 85%);
+  border-radius: 20px;
+  z-index: 0;
+  transition: all 0.4s ease;
+}
+
+.story-img-wrapper:hover .story-img-bg {
+  top: 20px;
+  right: -20px;
+}
+
+/* --- Styling Card Visi & Misi --- */
+.vm-card {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(124, 37, 186, 0.1);
+  border-top: 4px solid #7c25ba; /* Garis ungu tebal di atas card */
+}
+
+.vm-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(124, 37, 186, 0.15) !important;
+}
+
+.vm-icon {
+  width: 60px;
+  height: 60px;
+  background-color: color-mix(in srgb, #7c25ba, transparent 90%);
+  color: #7c25ba;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.vm-card:hover .vm-icon {
+  background-color: #7c25ba;
+  color: white;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Call to Action Mini di Halaman About --- */
+.cta-mini-about {
+  background: linear-gradient(135deg, #7c25ba 0%, #5a1a8c 100%);
+}
+
+/* Penyesuaian Responsif untuk Mobile & Tablet */
+@media (max-width: 991px) {
+  .story-img-bg { 
+    right: -15px; 
+    top: 15px;
+  }
+  .about-header { 
+    padding: 120px 0 60px 0; 
+  }
+}
+/*--------------------------------------------------------------
+# Our Story Section (Professional & Clean Style)
+--------------------------------------------------------------*/
+
+/* Tipografi & Spasi */
+.letter-spacing-custom {
+  letter-spacing: 1.5px;
+}
+
+.lh-base {
+  line-height: 1.3 !important;
+}
+
+/* --- Wrapper Gambar Profesional --- */
+.img-professional-wrapper {
+  padding: 0 30px 30px 0; /* Memberi ruang untuk aksen box di kanan bawah */
+}
+
+/* Gambar Utama */
+.img-professional-wrapper img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+/* Aksen Kotak Lembut di Belakang Gambar */
+.img-accent-box {
+  top: 30px;
+  right: 0;
+  bottom: 0;
+  left: 30px;
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+/* Efek Interaksi Super Halus (Elegan) */
+.img-professional-wrapper:hover img {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.img-professional-wrapper:hover .img-accent-box {
+  top: 20px;
+  right: 10px;
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 991px) {
+  .img-professional-wrapper {
+    padding: 0;
+    margin-top: 30px;
+  }
+  .img-accent-box {
+    display: none; /* Sembunyikan aksen box di layar HP agar rapi dan fokus ke gambar */
+  }
+  #our-story .border-start {
+    border-left: none !important; /* Hilangkan garis batas vertikal pada statistik di HP */
+    padding-left: calc(var(--bs-gutter-x) * .5) !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Halaman Legal / Pusat Bantuan (Terms & Privacy)
+--------------------------------------------------------------*/
+
+/* Area Dokumen */
+.legal-document {
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.legal-section {
+  scroll-margin-top: 140px; /* Sangat Penting: Agar saat anchor link di-klik, judul tidak tertutup oleh navbar fixed/sticky */
+}
+
+/* Tipografi List Legal */
+.legal-section ul {
+  padding-left: 20px;
+}
+
+.legal-section ul li {
+  margin-bottom: 12px;
+  line-height: 1.8;
+  position: relative;
+  list-style-type: none;
+}
+
+/* Custom Bullet Point untuk Legalitas */
+.legal-section ul li::before {
+  content: "•";
+  color: #7c25ba;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  top: -2px;
+}
+
+/* --- Styling Sidebar Navigation --- */
+.legal-sidebar .nav-link {
+  padding: 10px 15px;
+  border-left: 3px solid transparent; /* Garis transparan default */
+  transition: all 0.3s ease;
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+}
+
+.legal-sidebar .nav-link:hover {
+  background-color: color-mix(in srgb, #7c25ba, transparent 95%);
+  color: #7c25ba !important;
+  border-left-color: color-mix(in srgb, #7c25ba, transparent 50%);
+}
+
+.legal-sidebar .nav-link.active {
+  background-color: color-mix(in srgb, #7c25ba, transparent 90%);
+  color: #7c25ba !important;
+  border-left-color: #7c25ba;
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 768px) {
+  .legal-document {
+    padding: 25px !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Halaman Kemitraan EO (/partnership)
+--------------------------------------------------------------*/
+
+/* Utility Global untuk Warna Ungu */
+.text-purple {
+  color: #7c25ba !important;
+}
+
+.bg-purple {
+  background-color: #7c25ba !important;
+}
+
+/* Animasi Tombol Header */
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-scale:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+  color: #5a1a8c !important;
+}
+
+/* --- Benefit Cards (Keunggulan) --- */
+.benefit-card {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+  border-bottom: 4px solid transparent;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(124, 37, 186, 0.08) !important;
+  border-bottom-color: #7c25ba;
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background-color: color-mix(in srgb, #7c25ba, transparent 90%);
+  color: #7c25ba;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transition: all 0.4s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  background-color: #7c25ba;
+  color: #ffffff;
+  transform: rotate(10deg);
+}
+
+/* --- Review Cards (Testimoni) --- */
+.review-card {
+  transition: all 0.3s ease;
+  border-color: rgba(124, 37, 186, 0.1) !important;
+}
+
+.review-card:hover {
+  box-shadow: 0 10px 25px rgba(124, 37, 186, 0.1) !important;
+  transform: translateY(-3px);
+}
+
+/* --- Form Submit Button --- */
+.btn-partner-submit {
+  background-color: #7c25ba;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-partner-submit:hover {
+  background-color: #5a1a8c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(124, 37, 186, 0.3) !important;
+  color: #ffffff;
+}
+
+/* Memastikan Input Form Minimalis dan Aktif Ungu (Daur ulang dari desain contact) */
+.custom-input {
+  background-color: #f9f9fa !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  padding: 12px 15px !important;
+  font-size: 15px !important;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  background-color: #ffffff !important;
+  border-color: #7c25ba !important;
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, #7c25ba, transparent 80%) !important;
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 991px) {
+  .partnership-hero {
+    padding: 100px 0 60px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Halaman Blog / Artikel
+--------------------------------------------------------------*/
+
+/* Warna Utility */
+.bg-purple {
+  background-color: #7c25ba !important;
+}
+
+.text-purple {
+  color: #7c25ba !important;
+}
+
+/* Styling Search Box */
+.search-box {
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 10px 25px rgba(124, 37, 186, 0.15) !important;
+  border-color: rgba(124, 37, 186, 0.3);
+}
+
+.focus-none:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* --- Animasi & Styling Card Blog --- */
+.blog-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  top: 0;
+  position: relative;
+}
+
+.blog-card:hover {
+  top: -8px;
+  box-shadow: 0 20px 30px rgba(124, 37, 186, 0.12) !important;
+  border-color: rgba(124, 37, 186, 0.2) !important;
+}
+
+/* Efek Zoom in pada gambar saat card dihover */
+.blog-card img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.blog-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Interaksi Judul & Tombol Baca */
+.blog-title a {
+  transition: color 0.3s ease;
+  line-height: 1.4;
+}
+
+.blog-card:hover .blog-title a {
+  color: #7c25ba !important;
+}
+
+.read-more-btn {
+  color: #7c25ba;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover .read-more-btn {
+  letter-spacing: 0.5px;
+}
+
+/*--------------------------------------------------------------
+# FAQ Section (Custom Accordion Kediri Event)
+--------------------------------------------------------------*/
+.custom-accordion .accordion-item {
+  background-color: #ffffff;
+  overflow: hidden; /* Memastikan sudut membulat diterapkan dengan baik */
+  transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-item:hover {
+  box-shadow: 0 10px 20px rgba(124, 37, 186, 0.08) !important; /* Efek hover halus */
+  transform: translateY(-2px);
+}
+
+/* Tombol Accordion (Posisi Tertutup) */
+.custom-accordion .accordion-button {
+  padding: 20px 25px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: none !important; /* Menghilangkan outline biru fokus bawaan browser */
+}
+
+/* Tombol Accordion (Posisi Terbuka/Aktif) */
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: color-mix(in srgb, #7c25ba, transparent 95%); /* Latar ungu sangat pudar */
+  color: #7c25ba; /* Teks berubah jadi ungu Kediri Event */
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 color-mix(in srgb, #7c25ba, transparent 80%);
+}
+
+/* Modifikasi Ikon Panah (Chevron) */
+.custom-accordion .accordion-button::after {
+  background-size: 1.25rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Ikon saat terbuka */
+.custom-accordion .accordion-button:not(.collapsed)::after {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(85%) saturate(3065%) hue-rotate(270deg) brightness(85%) contrast(98%);
+  /* Mengubah ikon SVG bawaan Bootstrap menjadi ungu #7c25ba menggunakan filter CSS */
+}
+
+/* Isi Body Accordion */
+.custom-accordion .accordion-body {
+  padding: 0 25px 25px 25px;
+  background-color: color-mix(in srgb, #7c25ba, transparent 95%);
+  border-top: none;
+}
+
+/*--------------------------------------------------------------
+# Halaman Detail Event
+--------------------------------------------------------------*/
+.bg-purple { background-color: #7c25ba !important; color: white; }
+.text-purple { color: #7c25ba !important; }
+.fw-black { font-weight: 900; letter-spacing: -1px; }
+.text-shadow { text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+
+/* --- Hero Banner Event --- */
+.event-hero {
+  height: 60vh;
+  min-height: 400px;
+  margin-top: 0; /* Menempel dengan breadcrumbs */
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.event-hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Gradient Overlay Gelap ke Terang (Membuat teks terbaca) */
+.event-hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
+}
+
+/* --- Styling Pilihan Tiket --- */
+.ticket-type {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ticket-type:hover {
+  border-color: #7c25ba !important;
+  background-color: color-mix(in srgb, #7c25ba, transparent 95%);
+}
+
+/* Merubah warna radio button bawaan */
+.ticket-type .form-check-input:checked {
+  background-color: #7c25ba;
+  border-color: #7c25ba;
+}
+
+/* Border aktif saat dipilih (dikontrol via JS) */
+.ticket-type.active-border {
+  border: 2px solid #7c25ba !important;
+  background-color: color-mix(in srgb, #7c25ba, transparent 95%);
+}
+
+/* Efek Tombol Beli */
+.ticket-box button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(124, 37, 186, 0.4);
+}
+
+/* Penyesuaian Mobile */
+@media (max-width: 991px) {
+  .event-hero { 
+    height: 50vh; 
+  }
+  .event-hero h1 { 
+    font-size: 2rem; 
+    margin-top: 400px;
+  }
+  .ticket-box-wrapper { margin-top: 20px; }
+}
+
+/*--------------------------------------------------------------
+# Kustomisasi Header/Navbar (Selalu Ungu)
+--------------------------------------------------------------*/
+/* Paksa background header menjadi ungu di segala kondisi scroll */
+#header.header {
+  background-color: #7c25ba !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Mengubah warna nama website/logo teks menjadi putih */
+#header .sitename {
+  color: #ffffff !important;
+}
+
+/* Mengubah warna link menu menjadi putih agar kontras dengan ungu */
+.navmenu a,
+.navmenu a:focus {
+  color: rgba(255, 255, 255, 0.8) !important; /* Putih agak transparan */
+}
+
+/* Saat link di-hover atau aktif, warnanya menjadi putih terang solid */
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: #ffffff !important;
+}
+
+/* Memberikan garis bawah (underline) putih pada menu yang sedang aktif untuk penanda */
+.navmenu .active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* Mengubah warna tombol "Get Started" / "Cari Event" di pojok kanan */
+#header .btn-getstarted {
+  background-color: #ffffff !important;
+  color: #7c25ba !important; /* Teks ungu, latar putih (kebalikan dari navbar) */
+  font-weight: 700;
+}
+
+#header .btn-getstarted:hover {
+  background-color: #f8f9fa !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Penyesuaian Ikon Mobile Menu (Hamburger Icon) --- */
+.mobile-nav-toggle {
+  color: #ffffff !important;
+}
+
+/*--------------------------------------------------------------
+# Halaman Blog Details
+--------------------------------------------------------------*/
+/* Formatting Typography dalam Artikel */
+.article-content h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #222222;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.article-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Table of Content (TOC) --- */
+.toc-list-wrapper {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.toc-list-wrapper.hidden {
+  display: none;
+}
+.toc-list-wrapper ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.toc-list-wrapper ul ul {
+  padding-left: 20px;
+  border-left: 2px solid rgba(124, 37, 186, 0.2);
+  margin-top: 5px;
+}
+.toc-list-wrapper li {
+  margin-bottom: 8px;
+}
+.toc-list-wrapper a {
+  color: #555555;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+.toc-list-wrapper a:hover {
+  color: #7c25ba;
+  padding-left: 5px;
+}
+
+/* --- Blockquote Modern --- */
+.custom-blockquote {
+  background: linear-gradient(135deg, color-mix(in srgb, #7c25ba, transparent 90%) 0%, color-mix(in srgb, #d836c4, transparent 95%) 100%);
+  border-left: 5px solid #7c25ba;
+}
+
+/* --- Baca Juga Box --- */
+.hover-purple:hover {
+  color: #7c25ba !important;
+  text-decoration: underline !important;
+}
+
+/* --- Tombol Share --- */
+.btn-share {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+.btn-share:hover {
+  transform: translateY(-3px);
+}
+
+/* --- Tombol Artikel Terkait --- */
+.btn-outline-purple {
+  color: #7c25ba;
+  border: 1px solid #7c25ba;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+.btn-outline-purple:hover {
+  background-color: #7c25ba;
+  color: #ffffff;
+}
+
+/* Memperbaiki jarak scroll ketika klik menu di TOC agar tidak tertutup header */
+.article-content h2, .article-content h3 {
+  scroll-margin-top: 120px; 
+}
+
+/*--------------------------------------------------------------
+# Floating WhatsApp Button
+--------------------------------------------------------------*/
+.floating-wa {
+  position: fixed;
+  bottom: 80px; /* Ketinggian dari bawah. Ubah angka ini jika masih bertabrakan dengan tombol up */
+  right: 15px;  /* Jarak dari kanan */
+  width: 55px;
+  height: 55px;
+  background-color: #25d366; /* Warna hijau khas WhatsApp */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 9999; /* Memastikan posisinya selalu di atas elemen lain */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse-wa 2s infinite; /* Efek berdenyut */
+}
+
+.floating-wa:hover, 
+.floating-wa:focus {
+  background-color: #128C7E; /* Warna hijau gelap saat di-hover */
+  color: #ffffff;
+  transform: translateY(-5px); /* Efek melompat sedikit saat di-hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animasi Denyut (Pulse) */
+@keyframes pulse-wa {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Penyesuaian ukuran untuk layar HP (Mobile) */
+@media (max-width: 768px) {
+  .floating-wa {
+    bottom: 75px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Pengaturan Ukuran Logo & Spasi Header
+--------------------------------------------------------------*/
+
+/* 1. Membesarkan Gambar Logo */
+#header .logo img {
+  max-height: 80px !important; /* Angka default biasanya 40px. Besarkan angka ini (misal 70px atau 80px) sesuai selera */
+  width: auto !important;      /* Biarkan auto agar gambar tidak gepeng/distorsi */
+  margin: 0 !important;        /* Menghilangkan margin bawaan gambar jika ada */
+}
+
+/* 2. Mengurangi Jarak Atas Bawah (Padding) pada Header */
+#header.header {
+  padding-top: 10px !important;    /* Ubah angka ini (Makin kecil angka, makin mepet ke atas) */
+  padding-bottom: 10px !important; /* Ubah angka ini (Makin kecil angka, makin mepet ke bawah) */
+  min-height: auto !important;     /* Memastikan tidak ada tinggi minimal bawaan template yang menahan */
+}
+
+/*--------------------------------------------------------------
+# Perbaikan Global Jarak Breadcrumbs ke Navbar
+--------------------------------------------------------------*/
+/* Menargetkan div breadcrumb yang berada langsung di bawah tag main */
+.main > .bg-light.mt-5.pt-5 {
+  margin-top: 100px !important; /* Mengganti bawaan mt-5 dengan jarak pasti dari navbar */
+  padding-top: 15px !important; /* Mengurangi bawaan pt-5 agar kotak abu-abunya tidak terlalu tebal */
+}
+
+/* Penyesuaian khusus untuk layar HP (Mobile) */
+@media (max-width: 991px) {
+  .main > .bg-light.mt-5.pt-5 {
+    margin-top: 100px !important; /* Navbar mobile biasanya lebih pendek */
+  }
+}
+
+/*--------------------------------------------------------------
+# FIX: Perbaikan Warna Teks Menu di Tampilan Mobile (HP)
+--------------------------------------------------------------*/
+@media (max-width: 1199px) {
+  /* Memastikan teks menu di HP berwarna gelap (abu-abu/hitam) */
+  .navmenu a,
+  .navmenu a:focus {
+    color: #333333 !important; 
+  }
+
+  /* Saat menu di HP disentuh/aktif, warnanya menjadi ungu Kediri Event */
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: #7c25ba !important; 
+    background-color: transparent !important;
+  }
+
+  /* Menghilangkan garis bawah putih (efek desktop) yang bocor ke versi mobile */
+  .navmenu .active::after {
+    display: none !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Starter Section Section
+--------------------------------------------------------------*/
+.starter-section {
+  /* Add your styles here */
+}
+
