@@ -138,7 +138,7 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-5 position-relative">
 
-      <div class="col-lg-4 col-md-5 d-none d-md-block">
+      <div class="col-lg-4 col-md-5 d-block">
         <div class="legal-sidebar sticky-top" style="top: 120px; z-index: 10;">
           <div class="bg-white p-4 rounded-4 shadow-sm border-top border-4" style="border-top-color: #7c25ba !important;">
             <h4 class="fw-bold fs-5 mb-4 text-dark">Daftar Isi Dokumen</h4>
@@ -300,6 +300,56 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
   <script src="assets/js/main.js" defer></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.legal-nav .nav-link');
+    const sections = document.querySelectorAll('.legal-section');
+
+    function updateActiveLink() {
+      let current = '';
+      const scrollPosition = window.scrollY + 150;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollPosition >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href').substring(1);
+        if (href === current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    // Jalankan saat scroll
+    window.addEventListener('scroll', updateActiveLink);
+    // Jalankan saat load
+    window.addEventListener('load', updateActiveLink);
+
+    // Smooth scroll saat klik link (opsional)
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          const headerOffset = 120;
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>

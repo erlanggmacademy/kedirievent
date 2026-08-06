@@ -273,26 +273,25 @@ h6 {
     margin-left: 5px;
     transition: 0.3s;
   }
+.navmenu>ul>li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;           /* ← Tipis (2px → 1px) */
+  bottom: -6px;
+  left: 0;
+  background-color: var(--nav-hover-color);
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
 
-  .navmenu>ul>li>a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -6px;
-    left: 0;
-    background-color: var(--nav-hover-color);
-    visibility: hidden;
-    width: 0px;
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  .navmenu a:hover:before,
-  .navmenu li:hover>a:before,
-  .navmenu .active:before {
-    visibility: visible;
-    width: 100%;
-  }
+.navmenu a:hover:before,
+.navmenu li:hover>a:before,
+.navmenu .active:before {
+  visibility: visible;
+  width: 100%;
+}
 
   .navmenu li:hover>a,
   .navmenu .active,
@@ -709,8 +708,8 @@ h6 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: 15px;
+  right: 22px;
+  bottom: 90px;
   z-index: 99999;
   background-color: var(--accent-color);
   width: 40px;
@@ -901,6 +900,7 @@ section,
   color: var(--accent-color);
   background: var(--contrast-color);
 }
+
 
 .hero .btn-watch-video {
   font-size: 16px;
@@ -2579,16 +2579,18 @@ section,
   transform: translateY(-3px);
 }
 
-/* Modern Buttons */
 .btn-accent-modern {
-  background: linear-gradient(45deg, var(--surface-color), var(--accent-color));
-  border: none;
-  transition: all 0.3s ease;
+  background: #7c25ba !important;  /* ← SOLID UNGU, BUKAN GRADIENT */
+  border: none !important;
+  transition: all 0.3s ease !important;
+  color: #ffffff !important;
 }
 
 .btn-accent-modern:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(75, 0, 130, 0.3) !important;
+  background: #5a1a8c !important;  /* ← UNGU LEBIH GELAP SAAT HOVER */
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 20px rgba(124,37,186,0.3) !important;
+  color: #ffffff !important;
 }
 
 /* Play Button with Pulse Animation */
@@ -3550,17 +3552,7 @@ section,
   color: #ffffff !important;
 }
 
-/* Memberikan garis bawah (underline) putih pada menu yang sedang aktif untuk penanda */
-.navmenu .active::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  background-color: #ffffff;
-  border-radius: 2px;
-}
+
 
 /* Mengubah warna tombol "Get Started" / "Cari Event" di pojok kanan */
 #header .btn-getstarted {
@@ -3678,7 +3670,7 @@ section,
 --------------------------------------------------------------*/
 .floating-wa {
   position: fixed;
-  bottom: 80px; /* Ketinggian dari bawah. Ubah angka ini jika masih bertabrakan dengan tombol up */
+  bottom: 15px; /* Ketinggian dari bawah. Ubah angka ini jika masih bertabrakan dengan tombol up */
   right: 15px;  /* Jarak dari kanan */
   width: 55px;
   height: 55px;
@@ -3720,11 +3712,15 @@ section,
 /* Penyesuaian ukuran untuk layar HP (Mobile) */
 @media (max-width: 768px) {
   .floating-wa {
-    bottom: 75px;
+    bottom: 25px;
     right: 15px;
     width: 50px;
     height: 50px;
     font-size: 26px;
+  }
+   .scroll-top {
+    bottom: 95px;    /* ← Tambahkan ini, Scroll Top di atas WA di HP */
+    right: 20px;
   }
 }
 
@@ -3789,7 +3785,4 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
