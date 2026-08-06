@@ -26,7 +26,8 @@
   
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin"><!-- Favicons - Complete Set -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo2 square.png">`r`n  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo2 square.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo2 square.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo2 square.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo2 square.png">
   <link rel="shortcut icon" href="assets/img/logo2 square.png">
   <meta name="msapplication-TileImage" content="assets/img/logo2 square.png">
@@ -212,21 +213,28 @@
                 
                 <li class="d-flex">
                   <div class="icon-box me-3 text-center" style="width: 30px;">
-                    <i class="bi bi-check-circle-fill fs-4 text-success"></i>
+                    <i class="bi bi-check-circle-fill fs-4 text-danger"></i>
                   </div>
                   <div>
                     <span class="d-block small text-muted fw-bold text-uppercase">Status Acara</span>
-                    <span class="fw-medium text-success">Telah Selesai</span>
+                    <span class="fw-medium text-danger">Telah Selesai</span>
                   </div>
                 </li>
               </ul>
 
-              <div class="text-center p-3 rounded-3" style="background-color: #f8f9fa; border: 1px dashed #dee2e6;">
-                <p class="small text-muted mb-3 fw-medium">Ingin mengadakan forum diskusi atau seminar berskala regional bersama kami?</p>
-                <a href="https://wa.me/62895639068080?text=Halo%20Admin,%20saya%20melihat%20portofolio%20Forum%20Literasi%20Keuangan.%20Saya%20tertarik%20bekerja%20sama%20untuk%20membuat%20event%20serupa.%20Bisa%20berdiskusi%20lebih%20lanjut?" target="_blank" class="btn w-100 rounded-pill fw-bold py-2 text-white d-flex justify-content-center align-items-center shadow-sm" style="background-color: #7c25ba; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#5a1a8c'" onmouseout="this.style.backgroundColor='#7c25ba'">
-                  <i class="bi bi-whatsapp me-2 fs-5"></i> Diskusikan Event Anda
-                </a>
-              </div>
+              <!-- ========================================== -->
+<!-- TOMBOL EO INQUIRY (untuk event selesai) -->
+<!-- ========================================== -->
+<div class="text-center p-3 rounded-3" style="background-color: #f8f9fa; border: 1px dashed #dee2e6;">
+    <p class="small text-muted mb-3 fw-medium">Instansi atau perusahaan Anda butuh event organizer terpercaya untuk menangani event seperti ini?</p>
+    <button onclick="openEOInquiryForm('Forum Literasi Keuangan 2023')" 
+            class="btn w-100 rounded-pill fw-bold py-2 text-white d-flex justify-content-center align-items-center shadow-sm" 
+            style="background-color: #e67e22; transition: all 0.3s ease;" 
+            onmouseover="this.style.backgroundColor='#d35400'" 
+            onmouseout="this.style.backgroundColor='#e67e22'">
+        <i class="bi bi-building me-2 fs-5"></i> Butuh EO Terpercaya?
+    </button>
+</div>
 
             </div>
 
@@ -312,7 +320,11 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
     style="background-color: #7c25ba;" aria-label="Kembali ke atas"><i class="bi bi-arrow-up-short"></i></a>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- ========================================== -->
+  <!-- VENDOR SCRIPTS -->
+  <!-- ========================================== -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/vendor/php-email-form/validate.js" defer></script>
   <script src="assets/vendor/aos/aos.js" defer></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
@@ -323,7 +335,19 @@
 
   <script src="assets/js/main.js" defer></script>
 
+  <!-- ========================================== -->
+  <!-- SUPABASE + FORM REGISTRASI + DISKUSI -->
+  <!-- ========================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase.js"></script>
+  <script src="assets/js/form-modal.js"></script>
+  <script src="assets/js/eo-inquiry-form.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initRegistrationModal();
+        initEOInquiryModal();
+    });
+</script>
+
 </body>
-
 </html>
-

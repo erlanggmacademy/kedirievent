@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Kediri Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .login-card {
+            max-width: 400px;
+            margin: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-card .card-header {
+            background: #7c25ba;
+            color: white;
+            border-radius: 20px 20px 0 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-card .card-body {
+            padding: 30px;
+        }
+
+        .btn-purple {
+            background: #7c25ba;
+            color: white;
+        }
+
+        .btn-purple:hover {
+            background: #5a1a8c;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card login-card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="bi bi-shield-lock-fill me-2"></i> Admin Panel
+                </h4>
+                <small>Kediri Event</small>
+            </div>
+            <div class="card-body">
+                <form id="loginForm">
+                    <div id="loginError" class="alert alert-danger d-none"></div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email Admin</label>
+                        <input type="email" class="form-control" id="email" placeholder="Masukkan email admin" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Masukkan password"
+                            required>
+                    </div>
+
+                    <button type="submit" id="btnSubmit" class="btn btn-purple w-100 py-2 fw-bold">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var SUPABASE_URL = "https://jrtwuiuktxdlrtejkgzd.supabase.co";
+        var SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpydHd1aXVrdHhkbHJ0ZWprZ3pkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4OTM4OTgsImV4cCI6MjEwMTQ2OTg5OH0.fJZvSktPXo1dHP9mYbH7R_pzXWvD42XwKGvy25OHdSg";
+
+        var client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Jika sudah login session Supabase Auth, otomatis redirect ke dashboard
+        client.auth.getSession().then(function (res) {
+            if (res.data && res.data.session) {
+                window.location.href = 'dashboard.html';
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var errorDiv = document.getElementById('loginError');
+            var btnSubmit = document.getElementById('btnSubmit');
+
+            errorDiv.classList.add('d-none');
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Memverifikasi...';
+
+            try {
+                // Login resmi via Supabase Auth API (Sangat Aman)
+                var res = await client.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+                if (res.error) {
+                    throw res.error;
+                }
+
+                // Berhasil login
+                window.location.href = 'dashboard.html';
+
+            } catch (err) {
+                errorDiv.textContent = '❌ Login Gagal: ' + (err.message || 'Email atau password salah!');
+                errorDiv.classList.remove('d-none');
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="bi bi-box-arrow-in-right me-2"></i> Login';
+            }
+        });
+    </script>
+</body>
+
+</html>
