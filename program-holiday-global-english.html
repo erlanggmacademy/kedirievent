@@ -26,7 +26,8 @@
   
   <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin"><!-- Favicons - Complete Set -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo2 square.png">`r`n  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo2 square.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo2 square.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logo2 square.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo2 square.png">
   <link rel="shortcut icon" href="assets/img/logo2 square.png">
   <meta name="msapplication-TileImage" content="assets/img/logo2 square.png">
@@ -125,7 +126,7 @@
           
           <div class="position-relative rounded-4 overflow-hidden shadow-sm mb-4" style="aspect-ratio: 16/9;">
             <img src="assets/img/globalenglishpare.webp" class="img-fluid w-100 h-100 object-fit-cover" alt="Program Holiday Global English Pare" onerror="this.src='assets/img/blog/blog-1.jpg'">
-            <span class="badge position-absolute top-0 start-0 m-4 fs-6 px-3 py-2 shadow-sm text-dark" style="background-color: #0dcaf0;">Pendaftaran Terbuka</span>
+            <span class="badge position-absolute top-0 start-0 m-4 fs-6 px-3 py-2 shadow-sm text-white" style="background-color: #28a745;">Pendaftaran Dibuka</span>
           </div>
 
           <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border-top border-4" style="border-top-color: #7c25ba !important;">
@@ -198,23 +199,30 @@
                 
                 <li class="d-flex">
                   <div class="icon-box me-3 text-center" style="width: 30px;">
-                    <i class="bi bi-broadcast fs-4 text-info"></i>
+                    <i class="bi bi-broadcast fs-4 text-success"></i>
                   </div>
                   <div>
                     <span class="d-block small text-muted fw-bold text-uppercase">Status Pendaftaran</span>
-                    <span class="fw-bold text-info">Tersedia (Aktif)</span>
+                    <span class="fw-bold text-success">Pendaftaran Dibuka</span>
                   </div>
                 </li>
               </ul>
 
+              <!-- ========================================== -->
+              <!-- TOMBOL DAFTAR DENGAN MODAL -->
+              <!-- ========================================== -->
               <div class="text-center p-3 rounded-3" style="background-color: #f8f9fa; border: 1px dashed #dee2e6;">
                 <p class="small text-muted mb-3 fw-medium">Amankan kuotamu sebelum kehabisan! Dapatkan informasi lengkap mengenai biaya dan fasilitas asrama.</p>
                 <div class="d-flex flex-column gap-2">
-                  <a href="https://wa.me/62895639068080?text=Halo%20Admin,%20saya%20ingin%20bertanya%20informasi%20lengkap%20dan%20biaya%20pendaftaran%20untuk%20Program%20Holiday%20di%20Global%20English%20Pare." target="_blank" class="btn w-100 rounded-pill fw-bold py-2 text-white d-flex justify-content-center align-items-center shadow-sm" style="background-color: #7c25ba; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#5a1a8c'" onmouseout="this.style.backgroundColor='#7c25ba'">
-                    <i class="bi bi-whatsapp me-2 fs-5"></i> Konsultasi & Daftar
-                  </a>
+                  <button onclick="openRegistrationForm('Program Holiday Global English Pare')" 
+                          class="btn w-100 rounded-pill fw-bold py-2 text-white d-flex justify-content-center align-items-center shadow-sm" 
+                          style="background-color: #7c25ba; transition: all 0.3s ease;" 
+                          onmouseover="this.style.backgroundColor='#5a1a8c'" 
+                          onmouseout="this.style.backgroundColor='#7c25ba'">
+                    <i class="bi bi-whatsapp me-2 fs-5"></i> Daftar Sekarang
+                  </button>
                   <a href="https://globalenglish.co.id/" target="_blank" class="btn w-100 rounded-pill fw-bold py-2 text-decoration-none" style="border: 2px solid #7c25ba; color: #7c25ba; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#f3e8ff'" onmouseout="this.style.backgroundColor='transparent'">
-                    <i class="bi bi-globe me-2"></i>Website Resmi
+                    <i class="bi bi-globe me-2"></i> Website Resmi
                   </a>
                 </div>
               </div>
@@ -303,7 +311,11 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
     style="background-color: #7c25ba;" aria-label="Kembali ke atas"><i class="bi bi-arrow-up-short"></i></a>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- ========================================== -->
+  <!-- VENDOR SCRIPTS -->
+  <!-- ========================================== -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <script src="assets/vendor/php-email-form/validate.js" defer></script>
   <script src="assets/vendor/aos/aos.js" defer></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
@@ -314,7 +326,17 @@
 
   <script src="assets/js/main.js" defer></script>
 
+  <!-- ========================================== -->
+  <!-- SUPABASE + FORM MODAL -->
+  <!-- ========================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/supabase.js"></script>
+  <script src="assets/js/form-modal.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initRegistrationModal();
+    });
+  </script>
+
 </body>
-
 </html>
-
