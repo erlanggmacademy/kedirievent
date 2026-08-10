@@ -196,14 +196,14 @@ async function handleEOInquiryForm(e) {
             
             const waMessage = `Halo Admin Kediri Event,\n\n` +
                 `Saya dari *${institutionName}* ingin berkonsultasi tentang event seperti *${eventName}*.\n\n` +
-                `📋 Detail Kebutuhan:\n` +
-                `🏢 Instansi: ${institutionName}\n` +
-                `📧 Email: ${email}\n` +
-                `📱 WhatsApp: ${phone}\n` +
-                `🎯 Jenis Event: ${eventType}\n` +
-                `👥 Jumlah Peserta: ${participantCount}\n` +
-                `📝 Deskripsi: ${description}\n` +
-                `💰 Estimasi Budget: ${budgetEstimate || '-'}\n\n` +
+                `\u{1F4CB} Detail Kebutuhan:\n` +
+                `\u{1F3E2} Instansi: ${institutionName}\n` +
+                `\u{1F4E7} Email: ${email}\n` +
+                `\u{1F4F1} WhatsApp: ${phone}\n` +
+                `\u{1F3AF} Jenis Event: ${eventType}\n` +
+                `\u{1F465} Jumlah Peserta: ${participantCount}\n` +
+                `\u{1F4DD} Deskripsi: ${description}\n` +
+                `\u{1F4B0} Estimasi Budget: ${budgetEstimate || '-'}\n\n` +
                 `Mohon info lebih lanjut. Terima kasih!`;
             
             setTimeout(() => {
