@@ -153,7 +153,7 @@ async function handleDiscussionForm(e) {
             document.getElementById('discussionLoading').classList.add('d-none');
             document.getElementById('discussionSuccess').classList.remove('d-none');
             
-            const waMessage = `Halo Admin Kediri Event, saya ${fullName} ingin berdiskusi tentang event ${eventName}.%0A%0APertanyaan/Komentar: ${question}`;
+            const waMessage = `Halo Admin Kediri Event, saya ${fullName} ingin berdiskusi tentang event ${eventName}.\n\nPertanyaan/Komentar: ${question}`;
             
             setTimeout(() => {
                 window.open(`https://wa.me/62895639068080?text=${encodeURIComponent(waMessage)}`, '_blank');

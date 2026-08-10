@@ -194,16 +194,16 @@ async function handleEOInquiryForm(e) {
             document.getElementById('eoInquiryLoading').classList.add('d-none');
             document.getElementById('eoInquirySuccess').classList.remove('d-none');
             
-            const waMessage = `Halo Admin Kediri Event,%0A%0A` +
-                `Saya dari *${institutionName}* ingin berkonsultasi tentang event seperti *${eventName}*.%0A%0A` +
-                `📋 Detail Kebutuhan:%0A` +
-                `🏢 Instansi: ${institutionName}%0A` +
-                `📧 Email: ${email}%0A` +
-                `📱 WhatsApp: ${phone}%0A` +
-                `🎯 Jenis Event: ${eventType}%0A` +
-                `👥 Jumlah Peserta: ${participantCount}%0A` +
-                `📝 Deskripsi: ${description}%0A` +
-                `💰 Estimasi Budget: ${budgetEstimate || '-'}%0A%0A` +
+            const waMessage = `Halo Admin Kediri Event,\n\n` +
+                `Saya dari *${institutionName}* ingin berkonsultasi tentang event seperti *${eventName}*.\n\n` +
+                `📋 Detail Kebutuhan:\n` +
+                `🏢 Instansi: ${institutionName}\n` +
+                `📧 Email: ${email}\n` +
+                `📱 WhatsApp: ${phone}\n` +
+                `🎯 Jenis Event: ${eventType}\n` +
+                `👥 Jumlah Peserta: ${participantCount}\n` +
+                `📝 Deskripsi: ${description}\n` +
+                `💰 Estimasi Budget: ${budgetEstimate || '-'}\n\n` +
                 `Mohon info lebih lanjut. Terima kasih!`;
             
             setTimeout(() => {
