@@ -11,6 +11,11 @@
     <style>
         body {
             background: #f0f2f5;
+            display: none;
+        }
+
+        body.auth-checked {
+            display: block !important;
         }
 
         /* ---- MOBILE TOPBAR ---- */
@@ -326,10 +331,21 @@
 
         async function checkLogin() {
             var client = getSupabaseClient();
-            if (!client) return;
-            var res = await client.auth.getSession();
-            if (!res.data || !res.data.session) {
-                window.location.href = "index.html";
+            if (!client) {
+                window.location.replace("index.html");
+                return false;
+            }
+            try {
+                var res = await client.auth.getSession();
+                if (!res.data || !res.data.session) {
+                    window.location.replace("index.html");
+                    return false;
+                }
+                document.body.classList.add("auth-checked");
+                return true;
+            } catch (err) {
+                window.location.replace("index.html");
+                return false;
             }
         }
 
@@ -339,7 +355,7 @@
                 if (client) {
                     await client.auth.signOut();
                 }
-                window.location.href = "index.html";
+                window.location.replace("index.html");
             }
         }
 
@@ -554,10 +570,12 @@
             document.getElementById('sidebarBackdrop').classList.remove('open');
         }
 
-        window.onload = function () {
-            checkLogin();
-            loadEventFilter();
-            loadData();
+        window.onload = async function () {
+            var isAuthed = await checkLogin();
+            if (isAuthed) {
+                loadEventFilter();
+                loadData();
+            }
         };
     </script>
 </body>

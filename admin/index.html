@@ -88,7 +88,7 @@
         // Jika sudah login session Supabase Auth, otomatis redirect ke dashboard
         client.auth.getSession().then(function (res) {
             if (res.data && res.data.session) {
-                window.location.href = 'dashboard.html';
+                window.location.replace('dashboard.html');
             }
         });
 
@@ -116,7 +116,7 @@
                 }
 
                 // Berhasil login
-                window.location.href = 'dashboard.html';
+                window.location.replace('dashboard.html');
 
             } catch (err) {
                 errorDiv.textContent = '❌ Login Gagal: ' + (err.message || 'Email atau password salah!');
