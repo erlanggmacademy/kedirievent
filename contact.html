@@ -431,13 +431,13 @@
           document.getElementById('contactSuccess').classList.remove('d-none');
 
           // Redirect ke WhatsApp
-          var textWa = 'Halo Tim Kediri Event,%0A%0A';
+          var textWa = 'Halo Tim Kediri Event,\n\n';
           textWa += 'Perkenalkan saya *' + name + '*';
           if (instansi) {
             textWa += ' dari *' + instansi + '*';
           }
-          textWa += '.%0A%0ASaya menghubungi Anda terkait: *' + subject + '*.%0A%0A';
-          textWa += 'Berikut detail pesan saya:%0A"' + message + '"%0A%0A';
+          textWa += '.\n\nSaya menghubungi Anda terkait: *' + subject + '*.\n\n';
+          textWa += 'Berikut detail pesan saya:\n"' + message + '"\n\n';
           textWa += 'Mohon arahannya. Terima kasih.';
 
           setTimeout(function() {
