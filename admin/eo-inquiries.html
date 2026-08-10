@@ -365,19 +365,19 @@
         async function checkLogin() {
             var client = getSupabaseClient();
             if (!client) {
-                window.location.replace('index.html');
+                window.location.replace('/admin/index.html');
                 return false;
             }
             try {
                 var res = await client.auth.getSession();
                 if (!res.data || !res.data.session) {
-                    window.location.replace('index.html');
+                    window.location.replace('/admin/index.html');
                     return false;
                 }
                 document.body.classList.add("auth-checked");
                 return true;
             } catch (err) {
-                window.location.replace('index.html');
+                window.location.replace('/admin/index.html');
                 return false;
             }
         }
@@ -388,7 +388,7 @@
                 if (client) {
                     await client.auth.signOut();
                 }
-                window.location.replace('index.html');
+                window.location.replace('/admin/index.html');
             }
         }
 
